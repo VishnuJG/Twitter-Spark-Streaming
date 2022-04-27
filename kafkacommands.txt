@@ -1,0 +1,13 @@
+start zookerper : D:\PES6\DBTLab\DBTProject\apache-zookeeper-3.8.0-bin\bin>zkserver
+start kafka : D:\PES6\kafka_2.12-3.1.0>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+new terminal in : D:\PES6\kafka_2.12-3.1.0\bin\windows
+new topic : D:\PES6\kafka_2.12-3.1.0\bin\windows>kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic food
+
+producer : D:\PES6\kafka_2.12-3.1.0\bin\windows>kafka-console-producer.bat --broker-list localhost:9092 --topic food
+consumer : D:\PES6\kafka_2.12-3.1.0\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic food
+
+D:\PES6\kafka_2.12-3.1.0\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic food --from-beginning
+
+
+List Topics : D:\PES6\kafka_2.12-3.1.0\bin\windows>kafka-topics.bat --list --bootstrap-server localhost:9092
