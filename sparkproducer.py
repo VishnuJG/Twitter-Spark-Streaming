@@ -10,9 +10,9 @@ from datetime import datetime
 import time
 from json import dumps
 
-sc = SparkContext(appName="PySparkShell")
 # spark = StreamingContext(sc, 300)
 spark = SparkSession(sc)
+sc = SparkContext(appName="PySparkShell")
 
 topic_name="food"
 connection_port='127.0.0.1:9092'
